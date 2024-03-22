@@ -3,11 +3,11 @@
 	import '../../app.postcss';
 	import { AppShell, AppBar } from '@skeletonlabs/skeleton';
 
-	async function handleLogout(event: Event) {
+	async function handleLogout() {
 		const result = await fetch('http://localhost:3000/api/v1/user/logout', {
-			method: "GET",
-			credentials: 'include' 
-    	})
+			method: 'GET',
+			credentials: 'include'
+		});
 
 		const json = await result.json();
 
@@ -25,7 +25,7 @@
 		<!-- App Bar -->
 		<AppBar>
 			<svelte:fragment slot="lead">
-				<strong class="text-xl uppercase">Skeleton</strong>
+				<strong class="text-xl uppercase">Street Lights</strong>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
 				<button class="btn variant-ghost-primary" on:click={handleLogout}>Logout</button>
